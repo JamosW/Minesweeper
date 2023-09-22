@@ -91,22 +91,15 @@ class ButtonManager():
             if not(button.flagged):
                 #if button.rightClicked and adjacent button is not(leftClicked)
                 #pair = array([button.x, button.y])
-                
-                if(
-                #Up
-                ((btn.x + 17) == button.x) and btn.y == button.y or 
-                #Down
-                ((btn.y + 17) == button.y) and btn.x == button.x or 
-                #Left
-                ((btn.x - 17) == button.x) and btn.y == button.y or 
-                #Right
-                ((btn.y - 17) == button.y) and btn.x == button.x or 
-                #diag right - up
-                ((btn.x + 17) == button.x) and (btn.y - 17) == button.y or
-                #diag right down
-                ((btn.x + 17) == button.x) and (btn.y + 17) == button.y or
-                #diag left up
-                ((btn.x - 17) == button.x) and (btn.y - 17) == button.y or
-                #diag left down
-                ((btn.x - 17) == button.x) and (btn.y + 17) == button.y):
+                if(button.x in [btn.x, btn.x + 17, btn.x - 17] and
+                   button.y in [btn.y, btn.y + 17, btn.y - 17]):
                     button.leftClicked = [True, True]
+                
+
+
+
+
+
+
+                    
+                

@@ -14,7 +14,6 @@ class ButtonManager():
     BUTTONS_PER_ROW = 30
     spriteSheetImage = pygame.image.load("images/minesweeper_tiles.jpeg")
     
-    
     def __init__(self, window, outerBox):
         
         self.imageList = []
@@ -28,8 +27,7 @@ class ButtonManager():
         self.triggered = False
         self.bombsList = array([array([button.x, button.y]) for button in self.buttonList if button.hasBomb])
         self.giveIcons()
-
-                
+        
     def handleEvent(self, event):
         for button in self.buttonList:
             if not(self.triggered):
@@ -58,8 +56,7 @@ class ButtonManager():
                         button.currentImg = self.tileImg
             
             button.draw()
-
-                
+            
     def updateImageList(self, nImages, width, height):
         nCols = self.spriteSheetImage.get_width()
         
@@ -78,12 +75,11 @@ class ButtonManager():
             if x == (nCols - width):
                 row =  0
                 col = col + 1
-        
+    
     def giveIcons(self):
         for button in self.buttonList:
             button.bottomImg = self.imageList[3 + len([pair for pair in self.bombsList - array([button.x, button.y]) if (sum(abs(pair)) <= 34) & logical_not(isin(34, abs(pair)))])]
-        
-                
+         
     def clearOut(self, btn):
         
         for button in self.buttonList:

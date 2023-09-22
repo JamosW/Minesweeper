@@ -15,7 +15,6 @@ class ButtonManager():
     spriteSheetImage = pygame.image.load("images/minesweeper_tiles.jpeg")
     
     def __init__(self, window, outerBox):
-        
         self.imageList = []
         self.spriteSheetImage = pygame.Surface.convert(ButtonManager.spriteSheetImage)
         self.updateImageList(12, 128, 128)

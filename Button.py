@@ -25,7 +25,6 @@ class Button():
         self.flagged = False
         self.freeToClear = True
         
-    
     #perhaps temprary
     def handleEvent(self, event):
         if not(all(self.leftClicked)):
@@ -43,11 +42,7 @@ class Button():
         if event.type == MOUSEBUTTONUP:
             if event.button == 1 and self.buttonRect.collidepoint(event.pos):
                 self.leftClicked[1] = True
-        
-        
-                    
-
-        
+         
     def draw(self):
             self.window.blit(self.currentImg, self.buttonRect)
             

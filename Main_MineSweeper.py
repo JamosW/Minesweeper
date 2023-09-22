@@ -3,12 +3,10 @@ import sys
 from ButtonManager import *
 from pygwidgets import TextButton
 
-
 # 2 - Define constants
 WINDOW_WIDTH = 700
 WINDOW_HEIGHT = 480
 FRAMES_PER_SECOND = 100
-
 
 # 3 - Initialize the world
 pygame.init()
@@ -37,14 +35,12 @@ while True:
         oManager.checkForBomb()
         if oButton.handleEvent(event):
           oManager = ButtonManager(window, outerBox=outerBox)
-
-        
+  
   # 8 - Do any "per frame" actions
     
   # 9 - Clear the window
     window.fill(pygame.Color("white"))
-      
-      
+            
   # 10 - Draw all window elements
     pygame.draw.rect(window, "azure4", outerBox)
 
@@ -55,3 +51,4 @@ while True:
     pygame.display.update()
     
   # 12 - Slow things down a bit
+    clock.tick(FRAMES_PER_SECOND)
